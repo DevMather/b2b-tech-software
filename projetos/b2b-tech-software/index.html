@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Ativa animações de reveal somente com JS; fallback remove a classe se main.js não carregar
+    document.documentElement.classList.add('js');
+    setTimeout(function () { if (!window.__b2bRevealReady) document.documentElement.classList.remove('js'); }, 3500);
+  </script>
+
+  <!-- SEO -->
+  <title>B2B Tech Software | Landing Pages de Alta Conversão &amp; Edição de Mídia</title>
+  <meta name="description" content="Landing Pages de alta conversão com hospedagem 24h e edição profissional de vídeos (Reels/TikTok) e artes para empresas locais. Planos transparentes a partir de R$ 100/mês. Fale no WhatsApp.">
+  <meta name="keywords" content="landing page, criação de site, hospedagem de site, edição de vídeo, reels, tiktok, design para redes sociais, Brasília, B2B Tech Software">
+  <meta name="author" content="B2B Tech Software">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#060B14">
+  <meta name="color-scheme" content="dark">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="B2B Tech Software">
+  <meta property="og:title" content="B2B Tech Software | Landing Pages de Alta Conversão &amp; Edição de Mídia">
+  <meta property="og:description" content="Estrutura Digital de Elite para empresas que querem vender todos os dias: Landing Pages com hospedagem 24h + vídeos Reels/TikTok e artes profissionais.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="B2B Tech Software | Landing Pages de Alta Conversão &amp; Edição de Mídia">
+  <meta name="twitter:description" content="Landing Pages de alta conversão + edição de vídeos e artes para redes sociais. Planos transparentes.">
+
+  <!-- Favicon SVG inline -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563EB'/%3E%3Cstop offset='1' stop-color='%2338BDF8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%23060B14'/%3E%3Cpath d='M22 22L12 32l10 10M42 22l10 10-10 10M36 17l-8 30' stroke='url(%23g)' stroke-width='5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- TailwindCSS (CDN) + Config do Design System -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950: '#060B14', 900: '#0B1324', 800: '#101C33', border: '#1E293B' },
+            brand: { primary: '#2563EB', bright: '#3B82F6', glow: '#38BDF8', soft: '#60A5FA' },
+            ink: { primary: '#FFFFFF', secondary: '#E2E8F0', muted: '#94A3B8' },
+            success: '#10B981'
+          },
+          fontFamily: {
+            display: ['"Plus Jakarta Sans"', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          },
+          letterSpacing: { tightest: '-0.03em' },
+          maxWidth: { site: '1200px' }
+        }
+      }
+    };
+  </script>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Dados estruturados -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "B2B Tech Software",
+    "description": "Desenvolvimento de Landing Pages de alta conversão com hospedagem 24h e edição de mídia (Reels/TikTok e artes) para empresas.",
+    "telephone": "+55-61-99824-5862",
+    "areaServed": "BR",
+    "address": { "@type": "PostalAddress", "addressLocality": "Brasília", "addressRegion": "DF", "addressCountry": "BR" }
+  }
+  </script>
+</head>
+
+<body class="font-sans bg-navy-950 text-ink-muted antialiased">
+  <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+  <!-- Sprite SVG: ícone WhatsApp (marca não disponível no Lucide) -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="hidden" aria-hidden="true">
+    <symbol id="icon-whatsapp" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.03c0-5.22 4.25-9.47 9.48-9.47 2.53 0 4.91.99 6.7 2.78a9.41 9.41 0 0 1 2.77 6.7c0 5.22-4.25 9.46-9.47 9.46zm8.06-17.53A11.33 11.33 0 0 0 12.04.63C5.76.63.65 5.74.65 12.02c0 2.01.52 3.97 1.52 5.69L.55 23.6l6.03-1.58a11.36 11.36 0 0 0 5.45 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.18-5.9-3.33-8.05z"/>
+    </symbol>
+  </svg>
+
+  <!-- =================== SEÇÃO 1: NAVBAR =================== -->
+  <header id="site-header" class="fixed top-0 inset-x-0 z-50">
+    <nav class="max-w-site mx-auto px-5 sm:px-6 lg:px-8 h-[72px] flex items-center justify-between gap-4" aria-label="Navegação principal">
+      <a href="#inicio" class="flex items-center gap-2.5 shrink-0" aria-label="B2B Tech Software — voltar ao início">
+        <span class="w-9 h-9 rounded-xl flex items-center justify-center bg-gradient-to-br from-brand-primary to-brand-glow shadow-lg shadow-brand-primary/30">
+          <i data-lucide="code-xml" class="w-5 h-5 text-white"></i>
+        </span>
+        <span class="font-display font-extrabold text-[17px] sm:text-lg tracking-tight text-white leading-none">
+          B2B Tech <span class="text-brand-glow">Software</span>
+        </span>
+      </a>
+
+      <ul class="hidden lg:flex items-center gap-8 text-sm font-medium text-ink-secondary/80">
+        <li><a class="nav-link" href="#solucoes">Soluções</a></li>
+        <li><a class="nav-link" href="#nichos">Para Quem É</a></li>
+        <li><a class="nav-link" href="#como-funciona">Como Funciona</a></li>
+        <li><a class="nav-link" href="#planos">Planos e Preços</a></li>
+        <li><a class="nav-link" href="#faq">FAQ</a></li>
+      </ul>
+
+      <div class="flex items-center gap-2">
+        <a href="https://wa.me/5561998245862?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20B2B%20Tech%20Software%20e%20gostaria%20de%20conversar%20com%20um%20especialista%20sobre%20as%20solu%C3%A7%C3%B5es%20para%20minha%20empresa."
+           target="_blank" rel="noopener noreferrer"
+           class="btn-primary hidden sm:inline-flex text-sm px-4 py-2.5">
+          <span class="status-dot" aria-hidden="true"></span>
+          <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+          Falar no WhatsApp
+        </a>
+        <button id="menu-toggle" type="button"
+                class="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-xl border border-navy-border bg-navy-800/70 text-white hover:border-brand-bright transition-colors"
+                aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menu de navegação">
+          <span data-icon="open"><i data-lucide="menu" class="w-5 h-5"></i></span>
+          <span data-icon="close" class="hidden"><i data-lucide="x" class="w-5 h-5"></i></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Menu mobile -->
+    <div id="mobile-menu" class="lg:hidden absolute top-[72px] inset-x-0 h-[calc(100dvh-72px)] bg-navy-950/[0.97] backdrop-blur-xl border-t border-navy-border overflow-y-auto" aria-hidden="true">
+      <ul class="px-5 py-6 flex flex-col gap-1 font-display text-lg font-semibold text-white">
+        <li><a href="#solucoes" class="flex items-center justify-between py-4 border-b border-navy-border/70 hover:text-brand-glow transition-colors">Soluções <i data-lucide="chevron-right" class="w-5 h-5 text-brand-soft"></i></a></li>
+        <li><a href="#nichos" class="flex items-center justify-between py-4 border-b border-navy-border/70 hover:text-brand-glow transition-colors">Para Quem É <i data-lucide="chevron-right" class="w-5 h-5 text-brand-soft"></i></a></li>
+        <li><a href="#como-funciona" class="flex items-center justify-between py-4 border-b border-navy-border/70 hover:text-brand-glow transition-colors">Como Funciona <i data-lucide="chevron-right" class="w-5 h-5 text-brand-soft"></i></a></li>
+        <li><a href="#planos" class="flex items-center justify-between py-4 border-b border-navy-border/70 hover:text-brand-glow transition-colors">Planos e Preços <i data-lucide="chevron-right" class="w-5 h-5 text-brand-soft"></i></a></li>
+        <li><a href="#faq" class="flex items-center justify-between py-4 border-b border-navy-border/70 hover:text-brand-glow transition-colors">FAQ <i data-lucide="chevron-right" class="w-5 h-5 text-brand-soft"></i></a></li>
+      </ul>
+      <div class="px-5 pb-8">
+        <a href="https://wa.me/5561998245862?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20B2B%20Tech%20Software%20e%20gostaria%20de%20conversar%20com%20um%20especialista%20sobre%20as%20solu%C3%A7%C3%B5es%20para%20minha%20empresa."
+           target="_blank" rel="noopener noreferrer"
+           class="btn-primary w-full px-6 py-4 text-base">
+          <svg class="w-5 h-5" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+          Falar no WhatsApp
+        </a>
+        <p class="mt-4 flex items-center justify-center gap-2 text-sm text-ink-muted">
+          <span class="status-dot" aria-hidden="true"></span> Especialista online agora
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- =================== SEÇÃO 2: HERO =================== -->
+    <section id="inicio" class="relative pt-[120px] pb-20 sm:pt-[140px] lg:pt-[160px] lg:pb-28 overflow-hidden" aria-labelledby="hero-title">
+      <div class="absolute inset-0 bg-hero-glow pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute inset-0 bg-grid-pattern pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] max-w-full h-[400px] bg-brand-primary/20 blur-[120px] rounded-full pointer-events-none" aria-hidden="true"></div>
+
+      <div class="relative max-w-site mx-auto px-5 sm:px-6 lg:px-8 grid lg:grid-cols-[1.05fr_1fr] gap-14 lg:gap-12 items-center">
+        <!-- Texto -->
+        <div class="text-center lg:text-left">
+          <p class="section-tag reveal">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-glow shadow-[0_0_10px_#38BDF8]" aria-hidden="true"></span>
+            DESENVOLVIMENTO WEB • EDIÇÃO DE MÍDIA
+          </p>
+
+          <h1 id="hero-title" class="reveal mt-6 font-display font-extrabold text-white tracking-tightest leading-[1.08] text-[2.15rem] sm:text-5xl lg:text-[3.6rem]" data-delay="80">
+            <span class="text-gradient-blue">Estrutura Digital de Elite</span> para Empresas que Querem <span class="text-gradient-blue">Vender Todos os Dias.</span>
+          </h1>
+
+          <p class="reveal mt-6 text-base sm:text-lg text-ink-secondary/85 max-w-2xl mx-auto lg:mx-0" data-delay="160">
+            Desenvolvemos Landing Pages de alta conversão focadas em levar clientes direto para o seu WhatsApp e produzimos vídeos dinâmicos (Reels/TikTok) e artes profissionais que posicionam sua marca como líder no seu mercado.
+          </p>
+
+          <div class="reveal mt-9 flex flex-col sm:flex-row gap-3.5 justify-center lg:justify-start" data-delay="240">
+            <a href="#planos" class="btn-primary px-7 py-4 text-base">
+              Ver Planos e Investimento
+              <i data-lucide="arrow-right" class="btn-arrow w-5 h-5"></i>
+            </a>
+            <a href="https://wa.me/5561998245862?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20B2B%20Tech%20Software%20e%20gostaria%20de%20conversar%20com%20um%20especialista%20sobre%20as%20solu%C3%A7%C3%B5es%20para%20minha%20empresa."
+               target="_blank" rel="noopener noreferrer"
+               class="btn-ghost px-7 py-4 text-base">
+              <svg class="w-5 h-5 text-[#25D366]" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+              Falar com Especialista
+            </a>
+          </div>
+
+          <ul class="reveal mt-8 flex flex-col sm:flex-row sm:flex-wrap gap-x-6 gap-y-2.5 text-sm text-ink-secondary/80 items-center lg:items-start justify-center lg:justify-start" data-delay="320">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-success shrink-0"></i>Pagamento Facilitado (50% no início / 50% na entrega)</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-success shrink-0"></i>Hospedagem e Monitoramento 24h</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-success shrink-0"></i>Planos Claros e Sem Surpresas</li>
+          </ul>
+        </div>
+
+        <!-- Mockup duplo (HTML/CSS puro) -->
+        <div class="reveal relative w-full max-w-[560px] mx-auto lg:max-w-none pb-10 sm:pb-6" data-delay="200" aria-hidden="true">
+          <!-- Janela principal: Web Engine -->
+          <div class="mockup-window animate-float rounded-2xl overflow-hidden mr-[28%] sm:mr-[30%] lg:mr-[26%]">
+            <div class="flex items-center gap-2 px-3.5 py-2.5 border-b border-white/5 bg-navy-950/60">
+              <span class="mockup-dot bg-[#F87171]"></span>
+              <span class="mockup-dot bg-[#FBBF24]"></span>
+              <span class="mockup-dot bg-[#34D399]"></span>
+              <div class="ml-2 flex-1 min-w-0 flex items-center gap-1.5 bg-navy-800/90 border border-white/5 rounded-md px-2.5 py-1 font-mono text-[10px] sm:text-[11px] text-ink-muted truncate">
+                <i data-lucide="lock" class="w-3 h-3 text-success shrink-0"></i>
+                <span class="truncate">https://suaempresa.com.br</span>
+              </div>
+            </div>
+            <div class="p-4 sm:p-5">
+              <div class="flex items-center justify-between gap-2">
+                <div class="skeleton h-3 w-16 sm:w-20"></div>
+                <div class="hidden sm:flex gap-2">
+                  <div class="skeleton h-2 w-8"></div><div class="skeleton h-2 w-8"></div><div class="skeleton h-2 w-8"></div>
+                </div>
+              </div>
+              <div class="mt-4 rounded-xl border border-brand-bright/25 bg-brand-primary/10 p-3 sm:p-4">
+                <p class="font-mono text-[9px] sm:text-[10px] tracking-widest text-brand-soft">TAXA DE CONVERSÃO</p>
+                <div class="mt-1 flex items-end gap-2">
+                  <span class="font-display font-extrabold text-2xl sm:text-3xl text-white">+340%</span>
+                  <i data-lucide="trending-up" class="w-5 h-5 text-success mb-1"></i>
+                </div>
+                <div class="mt-3 flex items-end gap-1 h-10">
+                  <span class="flex-1 rounded-sm bg-brand-primary/40 h-[30%]"></span>
+                  <span class="flex-1 rounded-sm bg-brand-primary/50 h-[40%]"></span>
+                  <span class="flex-1 rounded-sm bg-brand-primary/60 h-[38%]"></span>
+                  <span class="flex-1 rounded-sm bg-brand-bright/70 h-[58%]"></span>
+                  <span class="flex-1 rounded-sm bg-brand-bright/80 h-[70%]"></span>
+                  <span class="flex-1 rounded-sm bg-brand-glow/90 h-[86%]"></span>
+                  <span class="flex-1 rounded-sm bg-brand-glow h-full"></span>
+                </div>
+              </div>
+              <div class="mt-4 space-y-2">
+                <div class="skeleton h-2.5 w-11/12"></div>
+                <div class="skeleton h-2.5 w-4/5"></div>
+              </div>
+              <div class="mt-4 inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#22C55E] to-[#16A34A] px-3 py-2 text-[11px] sm:text-xs font-bold text-white shadow-lg shadow-green-500/30">
+                <svg class="w-3.5 h-3.5"><use href="#icon-whatsapp"></use></svg>
+                Agendar pelo WhatsApp
+              </div>
+            </div>
+          </div>
+
+          <!-- Snippet de código flutuante -->
+          <div class="code-snippet animate-float-delayed absolute left-0 sm:-left-4 lg:-left-8 bottom-0 sm:bottom-2 rounded-xl px-3 py-2.5 font-mono text-[9.5px] sm:text-[11px] leading-relaxed max-w-[70%] sm:max-w-none">
+            <span class="text-brand-soft">&lt;LandingPage</span>
+            <span class="text-[#C4B5FD]">status</span><span class="text-ink-muted">=</span><span class="text-success">"online-24h"</span>
+            <br class="sm:hidden">
+            <span class="text-[#C4B5FD]">conversion</span><span class="text-ink-muted">=</span><span class="text-success">"high"</span>
+            <span class="text-brand-soft">/&gt;</span>
+          </div>
+
+          <!-- Card sobreposto: Media Studio Player -->
+          <div class="player-card animate-float-delayed absolute right-0 top-6 sm:top-8 w-[38%] sm:w-[36%] lg:w-[34%] rounded-2xl p-2 sm:p-2.5">
+            <div class="player-screen relative rounded-xl aspect-[9/14] overflow-hidden flex flex-col justify-between p-2 sm:p-2.5">
+              <span class="self-start rounded-md bg-navy-950/70 border border-brand-glow/30 px-1.5 py-0.5 font-mono text-[7px] sm:text-[8.5px] text-brand-glow leading-tight">Reels &amp; TikTok Ready • 60 FPS</span>
+              <span class="mx-auto w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/15 backdrop-blur border border-white/30 flex items-center justify-center">
+                <i data-lucide="play" class="w-4 h-4 sm:w-5 sm:h-5 text-white fill-white ml-0.5"></i>
+              </span>
+              <div>
+                <div class="audio-bars justify-center"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                <div class="mt-1.5 h-1.5 rounded bg-white/25"><div class="h-full w-2/3 rounded bg-white/70"></div></div>
+              </div>
+            </div>
+            <!-- Timeline de corte -->
+            <div class="mt-2 relative h-3 rounded timeline-track flex gap-[2px] p-[2px]">
+              <span class="timeline-clip rounded-sm w-[22%]"></span>
+              <span class="timeline-clip rounded-sm w-[30%] opacity-80"></span>
+              <span class="timeline-clip rounded-sm w-[18%] opacity-60"></span>
+              <span class="timeline-clip rounded-sm flex-1 opacity-90"></span>
+              <span class="timeline-playhead"></span>
+            </div>
+            <p class="mt-2 text-center rounded-lg bg-brand-primary/20 border border-brand-bright/30 py-1 font-mono text-[7.5px] sm:text-[9.5px] font-semibold text-white">4 Vídeos + 4 Artes / mês</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== SEÇÃO 3: PROBLEMA vs SOLUÇÃO =================== -->
+    <section class="relative py-20 lg:py-28 bg-navy-900" aria-labelledby="diagnostico-title">
+      <div class="max-w-site mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto">
+          <p class="section-tag reveal">DIAGNÓSTICO DE MERCADO</p>
+          <h2 id="diagnostico-title" class="reveal mt-5 font-display font-extrabold text-white tracking-tightest leading-tight text-[1.75rem] sm:text-4xl lg:text-[2.6rem]" data-delay="80">
+            Por que excelentes empresas locais perdem clientes todos os dias para concorrentes menores?
+          </h2>
+          <p class="reveal mt-5 text-base sm:text-lg" data-delay="140">
+            Hoje, o cliente decide em menos de 5 segundos se a sua empresa transmite confiança ou amadorismo. Veja a diferença entre operar no improviso e ter a B2B Tech Software no seu time:
+          </p>
+        </div>
+
+        <div class="mt-14 grid md:grid-cols-2 gap-6 lg:gap-8">
+          <!-- Cenário comum -->
+          <article class="card-problem reveal rounded-3xl p-6 sm:p-8">
+            <p class="font-mono text-[11px] tracking-widest text-[#FCA5A5]/80">CENÁRIO COMUM (SEM ESTRUTURA B2B)</p>
+            <h3 class="mt-3 font-display font-bold text-xl sm:text-2xl text-white">O Custo Invisível do Amadorismo Digital</h3>
+            <ul class="mt-7 space-y-5">
+              <li class="flex gap-4">
+                <span class="mt-0.5 w-8 h-8 shrink-0 rounded-lg bg-red-500/10 border border-red-400/20 flex items-center justify-center"><i data-lucide="x" class="w-4 h-4 text-[#F87171]"></i></span>
+                <p><strong class="text-ink-secondary font-semibold">Instagram abandonado ou sem padrão visual:</strong> Postagens esporádicas e artes improvisadas que fazem seu serviço parecer barato.</p>
+              </li>
+              <li class="flex gap-4">
+                <span class="mt-0.5 w-8 h-8 shrink-0 rounded-lg bg-red-500/10 border border-red-400/20 flex items-center justify-center"><i data-lucide="x" class="w-4 h-4 text-[#F87171]"></i></span>
+                <p><strong class="text-ink-secondary font-semibold">Falta de um Site Profissional:</strong> Apenas um link solto na bio. O cliente tem dúvidas sobre seus serviços e desiste antes de chamar no WhatsApp.</p>
+              </li>
+              <li class="flex gap-4">
+                <span class="mt-0.5 w-8 h-8 shrink-0 rounded-lg bg-red-500/10 border border-red-400/20 flex items-center justify-center"><i data-lucide="x" class="w-4 h-4 text-[#F87171]"></i></span>
+                <p><strong class="text-ink-secondary font-semibold">Vídeos que ninguém assiste até o fim:</strong> Falta de cortes dinâmicos, legendas estratégicas e ritmo visual no Reels e TikTok.</p>
+              </li>
+              <li class="flex gap-4">
+                <span class="mt-0.5 w-8 h-8 shrink-0 rounded-lg bg-red-500/10 border border-red-400/20 flex items-center justify-center"><i data-lucide="x" class="w-4 h-4 text-[#F87171]"></i></span>
+                <p><strong class="text-ink-secondary font-semibold">Tempo perdido tentando fazer tudo sozinho:</strong> Você gasta horas tentando editar vídeos ou configurar ferramentas em vez de focar em atender e gerir seu negócio.</p>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Padrão B2B -->
+          <article class="card-solution reveal rounded-3xl p-6 sm:p-8 relative overflow-hidden" data-delay="120">
+            <div class="absolute -top-20 -right-20 w-56 h-56 bg-brand-glow/20 blur-3xl rounded-full pointer-events-none" aria-hidden="true"></div>
+            <p class="relative font-mono text-[11px] tracking-widest text-brand-glow">PADRÃO B2B TECH SOFTWARE</p>
+            <h3 class="relative mt-3 font-display font-bold text-xl sm:text-2xl text-white">Sua Empresa com Presença Digital de Alto Valor</h3>
+            <ul class="relative mt-7 space-y-5">
+              <li class="flex gap-4">
+                <span class="mt-0.5 w-8 h-8 shrink-0 rounded-lg bg-brand-glow/10 border border-brand-glow/30 flex items-center justify-center"><i data-lucide="check" class="w-4 h-4 text-brand-glow"></i></span>
+                <p class="text-ink-secondary/85"><strong class="text-white font-semibold">Landing Page Profissional no Ar 24h:</strong> Página rápida, responsiva no celular e computador, estruturada para conduzir o visitante direto ao seu atendimento.</p>
+              </li>
+              <li class="flex gap-4">
+                <span class="mt-0.5 w-8 h-8 shrink-0 rounded-lg bg-brand-glow/10 border border-brand-glow/30 flex items-center justify-center"><i data-lucide="check" class="w-4 h-4 text-brand-glow"></i></span>
+                <p class="text-ink-secondary/85"><strong class="text-white font-semibold">Conteúdo Visual Recorrente e Magnético:</strong> Vídeos curtos editados com retenção máxima para Reels/TikTok e artes estáticas que impõem autoridade imediata.</p>
+              </li>
+              <li class="flex gap-4">
+                <span class="mt-0.5 w-8 h-8 shrink-0 rounded-lg bg-brand-glow/10 border border-brand-glow/30 flex items-center justify-center"><i data-lucide="check" class="w-4 h-4 text-brand-glow"></i></span>
+                <p class="text-ink-secondary/85"><strong class="text-white font-semibold">Suporte Técnico e Atualizações Mensais:</strong> Precisou trocar fotos, ajustar preços ou atualizar textos do site? Nossa equipe resolve para você sem dor de cabeça.</p>
+              </li>
+              <li class="flex gap-4">
+                <span class="mt-0.5 w-8 h-8 shrink-0 rounded-lg bg-brand-glow/10 border border-brand-glow/30 flex items-center justify-center"><i data-lucide="check" class="w-4 h-4 text-brand-glow"></i></span>
+                <p class="text-ink-secondary/85"><strong class="text-white font-semibold">Previsibilidade Financeira Total:</strong> Valores tabelados, justos e transparentes — com opção de pacote integrado para economizar todos os meses.</p>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== SEÇÃO 4: SOLUÇÕES =================== -->
+    <section id="solucoes" class="relative py-20 lg:py-28 overflow-hidden" aria-labelledby="solucoes-title">
+      <div class="absolute top-1/3 -left-40 w-[420px] h-[420px] bg-brand-primary/10 blur-[120px] rounded-full pointer-events-none" aria-hidden="true"></div>
+      <div class="relative max-w-site mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto">
+          <p class="section-tag reveal">NOSSAS SOLUÇÕES</p>
+          <h2 id="solucoes-title" class="reveal mt-5 font-display font-extrabold text-white tracking-tightest leading-tight text-[1.75rem] sm:text-4xl lg:text-[2.6rem]" data-delay="80">
+            Duas frentes de tecnologia e mídia desenhadas para gerar vendas reais.
+          </h2>
+          <p class="reveal mt-5 text-base sm:text-lg" data-delay="140">
+            Você pode contratar cada serviço separadamente de acordo com a sua necessidade atual ou unir ambos na nossa Solução Integrada.
+          </p>
+        </div>
+
+        <div class="mt-14 grid lg:grid-cols-2 gap-6 lg:gap-8">
+          <!-- Pilar 01 -->
+          <article class="glass-card is-hoverable reveal rounded-3xl p-6 sm:p-8 lg:p-10 flex flex-col">
+            <div class="flex items-center gap-4 flex-wrap">
+              <span class="icon-box w-14 h-14"><i data-lucide="monitor-smartphone" class="w-7 h-7"></i></span>
+              <span class="font-mono text-[11px] tracking-widest text-brand-soft">PILAR 01 • DESENVOLVIMENTO WEB</span>
+            </div>
+            <h3 class="mt-6 font-display font-bold text-2xl text-white leading-snug">Landing Pages Profissionais com Hospedagem e Suporte</h3>
+            <p class="mt-4">Criamos o site oficial da sua empresa em formato de página única de alta performance. Carregamento ultrarrápido, design moderno adaptado para celulares e computadores, e estrutura pensada para transformar visitantes em chamados no seu WhatsApp.</p>
+            <ul class="mt-7 space-y-4">
+              <li class="flex gap-3"><i data-lucide="message-circle" class="w-5 h-5 text-brand-glow shrink-0 mt-0.5"></i><p><strong class="text-white font-semibold">Foco Total em Atendimento:</strong> Botões estratégicos que levam o cliente direto para o seu WhatsApp com mensagem pronta.</p></li>
+              <li class="flex gap-3"><i data-lucide="smartphone" class="w-5 h-5 text-brand-glow shrink-0 mt-0.5"></i><p><strong class="text-white font-semibold">Design 100% Responsivo (Mobile-First):</strong> Experiência impecável tanto no smartphone quanto no desktop.</p></li>
+              <li class="flex gap-3"><i data-lucide="server" class="w-5 h-5 text-brand-glow shrink-0 mt-0.5"></i><p><strong class="text-white font-semibold">Hospedagem 24h com Monitoramento:</strong> Seu site sempre online, seguro e monitorado tecnicamente pela nossa equipe.</p></li>
+              <li class="flex gap-3"><i data-lucide="wrench" class="w-5 h-5 text-brand-glow shrink-0 mt-0.5"></i><p><strong class="text-white font-semibold">Manutenção Mensal Inclusa:</strong> Até 2 alterações simples por mês (troca de fotos, atualização de preços ou ajustes de textos).</p></li>
+            </ul>
+          </article>
+
+          <!-- Pilar 02 -->
+          <article class="glass-card is-hoverable reveal rounded-3xl p-6 sm:p-8 lg:p-10 flex flex-col" data-delay="120">
+            <div class="flex items-center gap-4 flex-wrap">
+              <span class="icon-box w-14 h-14"><i data-lucide="clapperboard" class="w-7 h-7"></i></span>
+              <span class="font-mono text-[11px] tracking-widest text-brand-soft">PILAR 02 • EDIÇÃO DE MÍDIA &amp; DESIGN</span>
+            </div>
+            <h3 class="mt-6 font-display font-bold text-2xl text-white leading-snug">Produção e Edição Recorrente para Instagram e TikTok</h3>
+            <p class="mt-4">Mantenha o perfil comercial da sua empresa ativo, atraente e profissional sem precisar gastar horas editando. Você grava o material bruto com o celular e nossa equipe transforma em peças visuais de alto impacto.</p>
+            <ul class="mt-7 space-y-4">
+              <li class="flex gap-3"><i data-lucide="film" class="w-5 h-5 text-brand-glow shrink-0 mt-0.5"></i><p><strong class="text-white font-semibold">Até 4 Vídeos Curtos (Reels/TikTok) por mês:</strong> Edição dinâmica com cortes precisos, legendas modernas, tratamento visual e foco em retenção de atenção.</p></li>
+              <li class="flex gap-3"><i data-lucide="image" class="w-5 h-5 text-brand-glow shrink-0 mt-0.5"></i><p><strong class="text-white font-semibold">4 Artes Estáticas Profissionais por mês:</strong> Design corporativo alinhado à identidade da sua empresa para feed ou avisos estratégicos.</p></li>
+              <li class="flex gap-3"><i data-lucide="badge-percent" class="w-5 h-5 text-brand-glow shrink-0 mt-0.5"></i><p><strong class="text-white font-semibold">Zero Taxa de Setup Inicial:</strong> Contratação direta pela mensalidade fixa, sem custo de adesão.</p></li>
+              <li class="flex gap-3"><i data-lucide="trending-up" class="w-5 h-5 text-brand-glow shrink-0 mt-0.5"></i><p><strong class="text-white font-semibold">Escala Sob Demanda:</strong> Precisa de mais volume em meses de campanha? Adicione vídeos extras por apenas R$ 40,00 por unidade.</p></li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- Banner de Sinergia -->
+        <div class="reveal mt-8 relative overflow-hidden rounded-3xl border border-brand-bright/50 bg-gradient-to-r from-brand-primary/20 via-navy-800/90 to-brand-glow/10 p-6 sm:p-8 lg:p-10 glow-blue">
+          <div class="absolute inset-0 bg-grid-pattern opacity-60 pointer-events-none" aria-hidden="true"></div>
+          <div class="relative flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-10">
+            <span class="icon-box w-14 h-14 shrink-0"><i data-lucide="layers" class="w-7 h-7"></i></span>
+            <div class="flex-1">
+              <h3 class="font-display font-bold text-xl sm:text-2xl text-white">Quer o máximo resultado com economia mensal?</h3>
+              <p class="mt-2 text-ink-secondary/85">Ao combinar sua Landing Page + Mídia Mensal no <strong class="text-white">Plano 03 (Solução Integrada)</strong>, você garante <strong class="text-brand-glow">R$ 50,00 de desconto imediato no Setup</strong> do site e reduz sua mensalidade combinada de R$ 350,00 para <strong class="text-brand-glow">R$ 300,00/mês</strong>.</p>
+            </div>
+            <a href="#planos" class="btn-primary link-arrow shrink-0 px-6 py-3.5 text-sm sm:text-base">
+              Conhecer Solução Integrada
+              <i data-lucide="arrow-right" class="btn-arrow w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== SEÇÃO 5: NICHOS =================== -->
+    <section id="nichos" class="relative py-20 lg:py-28 bg-navy-900" aria-labelledby="nichos-title">
+      <div class="max-w-site mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto">
+          <p class="section-tag reveal">SEGMENTOS ATENDIDOS</p>
+          <h2 id="nichos-title" class="reveal mt-5 font-display font-extrabold text-white tracking-tightest leading-tight text-[1.75rem] sm:text-4xl lg:text-[2.6rem]" data-delay="80">
+            Projetado para negócios que vivem de credibilidade e agendamentos.
+          </h2>
+          <p class="reveal mt-5 text-base sm:text-lg" data-delay="140">
+            Nossa metodologia se adapta perfeitamente à rotina de empresas locais e escritórios que precisam atrair clientes qualificados todos os dias.
+          </p>
+        </div>
+
+        <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
+          <article class="glass-card is-hoverable reveal rounded-2xl p-6">
+            <span class="icon-box w-12 h-12"><i data-lucide="scissors" class="w-6 h-6"></i></span>
+            <h3 class="mt-5 font-display font-bold text-lg text-white leading-snug">Barbearias, Salões &amp; Estética</h3>
+            <p class="mt-3 text-[15px]">Destaque seus cortes, procedimentos e ambiente com Reels dinâmicos e tenha uma página exclusiva para agendamentos rápidos via WhatsApp.</p>
+          </article>
+          <article class="glass-card is-hoverable reveal rounded-2xl p-6" data-delay="80">
+            <span class="icon-box w-12 h-12"><i data-lucide="stethoscope" class="w-6 h-6"></i></span>
+            <h3 class="mt-5 font-display font-bold text-lg text-white leading-snug">Clínicas Médicas, Odontológicas &amp; Consultórios</h3>
+            <p class="mt-3 text-[15px]">Transmita máxima segurança e higiene visual. Apresente suas especialidades, corpo clínico, localização e facilite a marcação de consultas.</p>
+          </article>
+          <article class="glass-card is-hoverable reveal rounded-2xl p-6" data-delay="160">
+            <span class="icon-box w-12 h-12"><i data-lucide="scale" class="w-6 h-6"></i></span>
+            <h3 class="mt-5 font-display font-bold text-lg text-white leading-snug">Escritórios de Advocacia, Contabilidade &amp; Consultorias</h3>
+            <p class="mt-3 text-[15px]">Posicionamento sóbrio, corporativo e de alta autoridade. Transforme dúvidas técnicas em vídeos educativos e capte clientes empresariais na sua Landing Page.</p>
+          </article>
+          <article class="glass-card is-hoverable reveal rounded-2xl p-6" data-delay="240">
+            <span class="icon-box w-12 h-12"><i data-lucide="store" class="w-6 h-6"></i></span>
+            <h3 class="mt-5 font-display font-bold text-lg text-white leading-snug">Comércios Locais &amp; Prestadores de Serviços</h3>
+            <p class="mt-3 text-[15px]">De oficinas especializadas a empresas de engenharia e tecnologia: profissionalize sua vitrine digital, apresente seu catálogo/portfólio e receba pedidos de orçamento.</p>
+          </article>
+        </div>
+
+        <div class="reveal mt-10 text-center">
+          <a href="https://wa.me/5561998245862?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20B2B%20Tech%20Software%20e%20gostaria%20de%20saber%20como%20voc%C3%AAs%20podem%20ajudar%20o%20meu%20segmento%20de%20neg%C3%B3cio."
+             target="_blank" rel="noopener noreferrer"
+             class="link-arrow inline-flex items-center gap-2 font-semibold text-brand-soft hover:text-brand-glow transition-colors">
+            Seu segmento não está na lista? Fale com a gente
+            <i data-lucide="arrow-right" class="btn-arrow w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== SEÇÃO 6: COMO FUNCIONA =================== -->
+    <section id="como-funciona" class="relative py-20 lg:py-28 overflow-hidden" aria-labelledby="processo-title">
+      <div class="max-w-site mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto">
+          <p class="section-tag reveal">METODOLOGIA ÁGIL</p>
+          <h2 id="processo-title" class="reveal mt-5 font-display font-extrabold text-white tracking-tightest leading-tight text-[1.75rem] sm:text-4xl lg:text-[2.6rem]" data-delay="80">
+            Do primeiro contato ao projeto no ar em 4 etapas simples.
+          </h2>
+          <p class="reveal mt-5 text-base sm:text-lg" data-delay="140">
+            Sem burocracia técnica e sem reuniões intermináveis. Cuidamos de toda a parte pesada para você.
+          </p>
+        </div>
+
+        <div class="relative mt-16">
+          <!-- Linhas conectoras -->
+          <div class="steps-line hidden lg:block absolute top-7 left-[12.5%] right-[12.5%] h-px" aria-hidden="true"></div>
+          <div class="steps-line-vertical lg:hidden absolute top-7 bottom-7 left-7 w-px" aria-hidden="true"></div>
+
+          <ol class="relative grid lg:grid-cols-4 gap-10 lg:gap-6">
+            <li class="reveal relative flex lg:flex-col gap-5 lg:items-center lg:text-center">
+              <span class="step-number relative z-10 w-14 h-14 shrink-0 rounded-2xl flex items-center justify-center text-white font-bold text-lg">01</span>
+              <div>
+                <h3 class="font-display font-bold text-lg text-white leading-snug">Alinhamento e Briefing Estratégico</h3>
+                <p class="mt-2 text-[15px]">Você escolhe o plano ideal e conversa com nosso especialista no WhatsApp. Coletamos as informações essenciais da sua empresa, logotipo, fotos, serviços e objetivos.</p>
+              </div>
+            </li>
+            <li class="reveal relative flex lg:flex-col gap-5 lg:items-center lg:text-center" data-delay="100">
+              <span class="step-number relative z-10 w-14 h-14 shrink-0 rounded-2xl flex items-center justify-center text-white font-bold text-lg">02</span>
+              <div>
+                <h3 class="font-display font-bold text-lg text-white leading-snug">Desenvolvimento Web &amp; Edição de Mídia</h3>
+                <p class="mt-2 text-[15px]">Nossa equipe entra em ação codificando sua Landing Page exclusiva e/ou editando seus vídeos curtos (Reels/TikTok) e artes estáticas com padrão profissional.</p>
+              </div>
+            </li>
+            <li class="reveal relative flex lg:flex-col gap-5 lg:items-center lg:text-center" data-delay="200">
+              <span class="step-number relative z-10 w-14 h-14 shrink-0 rounded-2xl flex items-center justify-center text-white font-bold text-lg">03</span>
+              <div>
+                <h3 class="font-display font-bold text-lg text-white leading-snug">Validação, Aprovação e Ajustes</h3>
+                <p class="mt-2 text-[15px]">Apresentamos o resultado para sua avaliação. No desenvolvimento do site, você só paga os 50% finais após a entrega estar pronta e aprovada.</p>
+              </div>
+            </li>
+            <li class="reveal relative flex lg:flex-col gap-5 lg:items-center lg:text-center" data-delay="300">
+              <span class="step-number relative z-10 w-14 h-14 shrink-0 rounded-2xl flex items-center justify-center text-white font-bold text-lg">04</span>
+              <div>
+                <h3 class="font-display font-bold text-lg text-white leading-snug">Publicação 24h &amp; Evolução Mensal</h3>
+                <p class="mt-2 text-[15px]">Colocamos seu site no ar com monitoramento contínuo e entregamos seu pacote mensal de mídias e manutenções para sua empresa nunca parar de crescer.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="reveal mt-14 text-center">
+          <a href="https://wa.me/5561998245862?text=Ol%C3%A1!%20Quero%20iniciar%20o%20briefing%20estrat%C3%A9gico%20com%20a%20B2B%20Tech%20Software."
+             target="_blank" rel="noopener noreferrer"
+             class="btn-ghost px-7 py-4 text-base">
+            <svg class="w-5 h-5 text-[#25D366]" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+            Iniciar meu briefing agora
+            <i data-lucide="arrow-right" class="btn-arrow w-5 h-5"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== SEÇÃO 7: PLANOS =================== -->
+    <section id="planos" class="relative py-20 lg:py-28 bg-navy-900 overflow-hidden" aria-labelledby="planos-title">
+      <div class="absolute inset-0 bg-grid-pattern pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] max-w-full h-[400px] bg-brand-primary/15 blur-[130px] rounded-full pointer-events-none" aria-hidden="true"></div>
+
+      <div class="relative max-w-site mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto">
+          <p class="section-tag reveal">TABELA DE INVESTIMENTO TRANSPARENTE</p>
+          <h2 id="planos-title" class="reveal mt-5 font-display font-extrabold text-white tracking-tightest leading-tight text-[1.75rem] sm:text-4xl lg:text-[2.6rem]" data-delay="80">
+            Escolha o plano ideal para o momento da sua empresa.
+          </h2>
+          <p class="reveal mt-5 text-base sm:text-lg" data-delay="140">
+            Transparência total do início ao fim: sem taxas surpresas, com pagamento de criação dividido em 50% no início e 50% na entrega.
+          </p>
+        </div>
+
+        <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-6 items-stretch">
+
+          <!-- PLANO 01 -->
+          <article class="plan-card glass-card reveal rounded-3xl p-6 sm:p-7 flex flex-col" aria-labelledby="plano-01-title">
+            <p class="font-mono text-xs font-bold tracking-widest text-brand-soft">PLANO 01</p>
+            <h3 id="plano-01-title" class="mt-3 font-display font-bold text-xl sm:text-[1.4rem] text-white leading-snug">Landing Page com Hospedagem e Suporte</h3>
+            <p class="mt-3 text-[15px]">Site profissional de página única, rápido, responsivo (celular e computador) e focado em levar o cliente direto para o seu atendimento.</p>
+
+            <div class="mt-6 space-y-3">
+              <div class="price-box rounded-2xl p-4">
+                <p class="font-mono text-[10.5px] tracking-widest text-ink-muted">CRIAÇÃO (SETUP ÚNICO)</p>
+                <p class="mt-1 font-display font-extrabold text-3xl text-white">R$ 400,00</p>
+                <p class="mt-1 text-xs text-ink-muted">50% no início do projeto e 50% na entrega final</p>
+              </div>
+              <div class="price-box rounded-2xl p-4">
+                <p class="font-mono text-[10.5px] tracking-widest text-ink-muted">MENSALIDADE (MANUTENÇÃO E HOSPEDAGEM)</p>
+                <p class="mt-1 font-display font-extrabold text-3xl text-white">R$ 100,00 <span class="text-base font-semibold text-ink-muted">/mês</span></p>
+                <p class="mt-1 text-xs text-ink-muted">Site sempre online e atualizado</p>
+              </div>
+            </div>
+
+            <ul class="mt-6 space-y-3 text-[15px] text-ink-secondary flex-1">
+              <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-success shrink-0 mt-0.5"></i>Site no ar 24h com monitoramento técnico</li>
+              <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-success shrink-0 mt-0.5"></i>Até 2 alterações simples por mês (troca de fotos, preços ou textos)</li>
+              <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-success shrink-0 mt-0.5"></i>Design responsivo para celular e computador</li>
+              <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-success shrink-0 mt-0.5"></i>Botões diretos para o seu WhatsApp de atendimento</li>
+            </ul>
+
+            <a href="https://wa.me/5561998245862?text=Ol%C3%A1!%20Tenho%20interesse%20no%20*PLANO%2001%20%E2%80%94%20Landing%20Page%20com%20Hospedagem%20e%20Suporte*%20(Setup%20R%24%20400%20%2B%20R%24%20100%2Fm%C3%AAs).%20Como%20podemos%20iniciar%3F"
+               target="_blank" rel="noopener noreferrer"
+               class="btn-ghost mt-8 w-full px-6 py-4 text-base">
+              <svg class="w-5 h-5 text-[#25D366]" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+              Contratar Plano 01
+            </a>
+          </article>
+
+          <!-- PLANO 02 -->
+          <article class="plan-card glass-card reveal rounded-3xl p-6 sm:p-7 flex flex-col" data-delay="100" aria-labelledby="plano-02-title">
+            <p class="font-mono text-xs font-bold tracking-widest text-brand-soft">PLANO 02</p>
+            <h3 id="plano-02-title" class="mt-3 font-display font-bold text-xl sm:text-[1.4rem] text-white leading-snug">Edição de Vídeo e Design para Redes Sociais</h3>
+            <p class="mt-3 text-[15px]">Produção e edição recorrente de conteúdo visual para manter seu perfil comercial ativo e profissional no Instagram e no TikTok.</p>
+
+            <div class="mt-6 space-y-3">
+              <div class="price-box rounded-2xl p-4">
+                <p class="font-mono text-[10.5px] tracking-widest text-ink-muted">CRIAÇÃO (SETUP)</p>
+                <p class="mt-1 font-display font-extrabold text-3xl text-white">Isento <span class="text-success">· R$ 0</span></p>
+                <p class="mt-1 text-xs text-ink-muted">Contratação direta pela mensalidade</p>
+              </div>
+              <div class="price-box rounded-2xl p-4">
+                <p class="font-mono text-[10.5px] tracking-widest text-ink-muted">MENSALIDADE FIXA</p>
+                <p class="mt-1 font-display font-extrabold text-3xl text-white">R$ 250,00 <span class="text-base font-semibold text-ink-muted">/mês</span></p>
+                <p class="mt-1 text-xs text-ink-muted">Pacote recorrente de mídia</p>
+              </div>
+            </div>
+
+            <ul class="mt-6 space-y-3 text-[15px] text-ink-secondary flex-1">
+              <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-success shrink-0 mt-0.5"></i>Até 4 vídeos curtos (Reels/TikTok) por mês</li>
+              <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-success shrink-0 mt-0.5"></i>4 artes estáticas por mês</li>
+              <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-success shrink-0 mt-0.5"></i>Demandas extras são orçadas à parte: R$ 40,00 por vídeo adicional</li>
+            </ul>
+
+            <a href="https://wa.me/5561998245862?text=Ol%C3%A1!%20Tenho%20interesse%20no%20*PLANO%2002%20%E2%80%94%20Edi%C3%A7%C3%A3o%20de%20V%C3%ADdeo%20e%20Design%20para%20Redes%20Sociais*%20(Setup%20Isento%20%2B%20R%24%20250%2Fm%C3%AAs).%20Como%20podemos%20iniciar%3F"
+               target="_blank" rel="noopener noreferrer"
+               class="btn-ghost mt-8 w-full px-6 py-4 text-base">
+              <svg class="w-5 h-5 text-[#25D366]" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+              Contratar Plano 02
+            </a>
+          </article>
+
+          <!-- PLANO 03 (DESTAQUE) -->
+          <article class="plan-card plan-featured reveal relative rounded-3xl p-6 sm:p-7 pt-10 flex flex-col md:col-span-2 lg:col-span-1 mt-4 md:mt-0" data-delay="200" aria-labelledby="plano-03-title">
+            <p class="featured-badge absolute -top-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full px-4 py-1.5 font-mono text-[11px] font-bold tracking-widest text-white flex items-center gap-1.5">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> MELHOR CUSTO-BENEFÍCIO
+            </p>
+            <p class="font-mono text-xs font-bold tracking-widest text-brand-glow">PLANO 03 • SOLUÇÃO INTEGRADA</p>
+            <h3 id="plano-03-title" class="mt-3 font-display font-bold text-xl sm:text-[1.4rem] text-white leading-snug">Pacote Completo: Site + Mídia Mensal</h3>
+            <p class="mt-3 text-[15px] text-ink-secondary/85">A estrutura definitiva para sua empresa: sua Landing Page oficial convertendo clientes 24h somada à presença constante no Instagram e TikTok.</p>
+
+            <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-1 gap-3">
+              <div class="price-box rounded-2xl p-4 !border-brand-bright/40">
+                <p class="font-mono text-[10.5px] tracking-widest text-brand-soft">CRIAÇÃO (DESCONTO DE INCENTIVO)</p>
+                <p class="mt-1 text-sm text-ink-muted">De <s class="text-ink-muted/80" aria-label="preço anterior R$ 400,00">R$ 400,00</s> por</p>
+                <p class="font-display font-extrabold text-3xl text-white">R$ 350,00</p>
+                <p class="mt-1 text-xs text-ink-muted">50% no início / 50% na entrega</p>
+              </div>
+              <div class="price-box rounded-2xl p-4 !border-brand-bright/40">
+                <p class="font-mono text-[10.5px] tracking-widest text-brand-soft">MENSALIDADE UNIFICADA</p>
+                <p class="mt-1 font-display font-extrabold text-3xl text-white">R$ 300,00 <span class="text-base font-semibold text-ink-muted">/mês</span></p>
+                <p class="mt-1 text-xs text-ink-muted">Economia direta na assinatura combinada (separados somam R$ 350/mês)</p>
+              </div>
+            </div>
+
+            <ul class="mt-6 space-y-3 text-[15px] text-ink-secondary flex-1">
+              <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-glow shrink-0 mt-0.5"></i>Criação do site profissional (Landing Page) + hospedagem 24h</li>
+              <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-glow shrink-0 mt-0.5"></i>2 manutenções/atualizações mensais na página</li>
+              <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-glow shrink-0 mt-0.5"></i>Pacote mensal de mídia: 4 vídeos curtos editados + 4 artes estáticas (vídeos extras a R$ 40,00/un)</li>
+            </ul>
+
+            <a href="https://wa.me/5561998245862?text=Ol%C3%A1!%20Quero%20aproveitar%20o%20*PLANO%2003%20(Solu%C3%A7%C3%A3o%20Integrada%20%E2%80%94%20Site%20%2B%20M%C3%ADdia%20Mensal)*%20com%20desconto%20de%20setup%20por%20R%24%20350%20e%20mensalidade%20unificada%20de%20R%24%20300%2Fm%C3%AAs!"
+               target="_blank" rel="noopener noreferrer"
+               class="btn-primary mt-8 w-full px-6 py-4 text-base">
+              <svg class="w-5 h-5" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+              Quero o Pacote Completo (Plano 03)
+            </a>
+          </article>
+        </div>
+
+        <p class="reveal mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-ink-muted text-center">
+          <span class="inline-flex items-center gap-2"><i data-lucide="shield-check" class="w-4 h-4 text-success"></i>Sem taxas surpresas</span>
+          <span class="inline-flex items-center gap-2"><i data-lucide="wallet" class="w-4 h-4 text-success"></i>Criação em 50% + 50%</span>
+          <span class="inline-flex items-center gap-2"><i data-lucide="headphones" class="w-4 h-4 text-success"></i>Suporte contínuo</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- =================== SEÇÃO 8: FAQ =================== -->
+    <section id="faq" class="relative py-20 lg:py-28" aria-labelledby="faq-title">
+      <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <p class="section-tag reveal">DÚVIDAS FREQUENTES</p>
+          <h2 id="faq-title" class="reveal mt-5 font-display font-extrabold text-white tracking-tightest leading-tight text-[1.75rem] sm:text-4xl lg:text-[2.6rem]" data-delay="80">
+            Tudo o que você precisa saber antes de começarmos.
+          </h2>
+          <p class="reveal mt-5 text-base sm:text-lg" data-delay="140">
+            Respostas diretas e transparentes sobre pagamentos, prazos e funcionamento dos planos.
+          </p>
+        </div>
+
+        <div class="mt-12 space-y-4">
+          <div class="faq-item glass-card reveal rounded-2xl" data-faq-item>
+            <h3>
+              <button type="button" id="faq-btn-1" class="w-full flex items-center justify-between gap-4 text-left p-5 sm:p-6 font-display font-semibold text-base sm:text-lg text-white" aria-expanded="false" aria-controls="faq-panel-1" data-faq-trigger>
+                Como funciona o pagamento de 50% no início e 50% na entrega para a criação do site?
+                <span class="faq-icon w-9 h-9 shrink-0 rounded-xl border border-brand-bright/30 bg-brand-primary/10 text-brand-glow flex items-center justify-center"><i data-lucide="plus" class="w-5 h-5"></i></span>
+              </button>
+            </h3>
+            <div id="faq-panel-1" class="faq-panel" role="region" aria-labelledby="faq-btn-1">
+              <div><p class="px-5 sm:px-6 pb-6 -mt-1">Para sua total segurança e tranquilidade, o valor de criação (Setup) da Landing Page — seja R$ 400,00 no Plano 01 ou R$ 350,00 no Plano 03 — é dividido em duas etapas: você investe 50% na aprovação do início do projeto e os outros 50% apenas na entrega final, quando sua página estiver pronta para ir ao ar.</p></div>
+            </div>
+          </div>
+
+          <div class="faq-item glass-card reveal rounded-2xl" data-faq-item>
+            <h3>
+              <button type="button" id="faq-btn-2" class="w-full flex items-center justify-between gap-4 text-left p-5 sm:p-6 font-display font-semibold text-base sm:text-lg text-white" aria-expanded="false" aria-controls="faq-panel-2" data-faq-trigger>
+                O que está incluso nas 2 alterações mensais da Landing Page?
+                <span class="faq-icon w-9 h-9 shrink-0 rounded-xl border border-brand-bright/30 bg-brand-primary/10 text-brand-glow flex items-center justify-center"><i data-lucide="plus" class="w-5 h-5"></i></span>
+              </button>
+            </h3>
+            <div id="faq-panel-2" class="faq-panel" role="region" aria-labelledby="faq-btn-2">
+              <div><p class="px-5 sm:px-6 pb-6 -mt-1">A mensalidade de manutenção e hospedagem garante que seu site fique no ar 24 horas por dia com monitoramento técnico e dá direito a até 2 atualizações simples por mês. Isso inclui troca de fotos da sua empresa, atualização de tabela de preços, mudança de textos promocionais ou alteração de números de contato.</p></div>
+            </div>
+          </div>
+
+          <div class="faq-item glass-card reveal rounded-2xl" data-faq-item>
+            <h3>
+              <button type="button" id="faq-btn-3" class="w-full flex items-center justify-between gap-4 text-left p-5 sm:p-6 font-display font-semibold text-base sm:text-lg text-white" aria-expanded="false" aria-controls="faq-panel-3" data-faq-trigger>
+                Como eu envio os vídeos para a edição do Plano 02 e Plano 03?
+                <span class="faq-icon w-9 h-9 shrink-0 rounded-xl border border-brand-bright/30 bg-brand-primary/10 text-brand-glow flex items-center justify-center"><i data-lucide="plus" class="w-5 h-5"></i></span>
+              </button>
+            </h3>
+            <div id="faq-panel-3" class="faq-panel" role="region" aria-labelledby="faq-btn-3">
+              <div><p class="px-5 sm:px-6 pb-6 -mt-1">O processo é extremamente simples! Você grava os vídeos brutos com o seu próprio celular (seguindo nossas orientações práticas de enquadramento e iluminação) e nos envia pelo WhatsApp ou Google Drive. Nossa equipe faz toda a decupagem, cortes dinâmicos, inserção de legendas, efeitos visuais e entrega os arquivos prontos para você postar no Reels e TikTok.</p></div>
+            </div>
+          </div>
+
+          <div class="faq-item glass-card reveal rounded-2xl" data-faq-item>
+            <h3>
+              <button type="button" id="faq-btn-4" class="w-full flex items-center justify-between gap-4 text-left p-5 sm:p-6 font-display font-semibold text-base sm:text-lg text-white" aria-expanded="false" aria-controls="faq-panel-4" data-faq-trigger>
+                E se em algum mês eu precisar de mais de 4 vídeos editados?
+                <span class="faq-icon w-9 h-9 shrink-0 rounded-xl border border-brand-bright/30 bg-brand-primary/10 text-brand-glow flex items-center justify-center"><i data-lucide="plus" class="w-5 h-5"></i></span>
+              </button>
+            </h3>
+            <div id="faq-panel-4" class="faq-panel" role="region" aria-labelledby="faq-btn-4">
+              <div><p class="px-5 sm:px-6 pb-6 -mt-1">Sem problemas! Tanto no Plano 02 quanto no Plano 03 você já conta com até 4 vídeos curtos (Reels/TikTok) e 4 artes estáticas por mês. Caso sua empresa tenha uma campanha especial ou queira aumentar a frequência de postagens, cada vídeo adicional é orçado à parte pelo valor fixo de apenas R$ 40,00 por unidade.</p></div>
+            </div>
+          </div>
+
+          <div class="faq-item glass-card reveal rounded-2xl" data-faq-item>
+            <h3>
+              <button type="button" id="faq-btn-5" class="w-full flex items-center justify-between gap-4 text-left p-5 sm:p-6 font-display font-semibold text-base sm:text-lg text-white" aria-expanded="false" aria-controls="faq-panel-5" data-faq-trigger>
+                Qual é o prazo médio de entrega da Landing Page e das mídias?
+                <span class="faq-icon w-9 h-9 shrink-0 rounded-xl border border-brand-bright/30 bg-brand-primary/10 text-brand-glow flex items-center justify-center"><i data-lucide="plus" class="w-5 h-5"></i></span>
+              </button>
+            </h3>
+            <div id="faq-panel-5" class="faq-panel" role="region" aria-labelledby="faq-btn-5">
+              <div><p class="px-5 sm:px-6 pb-6 -mt-1">Após o envio das informações iniciais (briefing, textos base e fotos), entregamos a primeira versão completa da sua Landing Page em poucos dias úteis para sua validação. Já os vídeos e artes do pacote mensal seguem um cronograma semanal organizado para que seu perfil esteja sempre abastecido.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <p class="reveal mt-10 text-center text-ink-muted">
+          Ainda tem alguma dúvida?
+          <a href="https://wa.me/5561998245862?text=Ol%C3%A1!%20Ainda%20tenho%20uma%20d%C3%BAvida%20sobre%20os%20planos%20da%20B2B%20Tech%20Software."
+             target="_blank" rel="noopener noreferrer"
+             class="font-semibold text-brand-soft hover:text-brand-glow underline-offset-4 hover:underline transition-colors">Pergunte direto no WhatsApp</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- =================== SEÇÃO 9: CTA FINAL =================== -->
+    <section class="relative pb-20 lg:pb-28" aria-labelledby="cta-final-title">
+      <div class="max-w-site mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="cta-final reveal relative overflow-hidden rounded-[2rem] px-6 py-14 sm:px-12 sm:py-16 lg:py-20 text-center">
+          <div class="absolute inset-0 bg-grid-pattern pointer-events-none" aria-hidden="true"></div>
+          <div class="relative max-w-3xl mx-auto">
+            <p class="section-tag">PRONTO PARA PROFISSIONALIZAR SUA EMPRESA?</p>
+            <h2 id="cta-final-title" class="mt-6 font-display font-extrabold text-white tracking-tightest leading-tight text-[1.85rem] sm:text-4xl lg:text-5xl">
+              Pare de perder clientes por falta de <span class="text-gradient-blue">posicionamento digital.</span>
+            </h2>
+            <p class="mt-5 text-base sm:text-lg text-ink-secondary/85">
+              Chame nossa equipe agora no WhatsApp, tire suas dúvidas em tempo real e escolha o plano ideal para colocar sua Landing Page e suas mídias em operação.
+            </p>
+            <a href="https://wa.me/5561998245862?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20B2B%20Tech%20Software%20e%20gostaria%20de%20conversar%20com%20um%20especialista%20sobre%20as%20solu%C3%A7%C3%B5es%20para%20minha%20empresa."
+               target="_blank" rel="noopener noreferrer"
+               class="btn-primary mt-9 px-6 sm:px-9 py-4 sm:py-5 text-base sm:text-lg w-full sm:w-auto">
+              <svg class="w-6 h-6 shrink-0" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+              Falar no WhatsApp: (61) 99824-5862
+            </a>
+            <p class="mt-5 text-sm text-ink-muted">Atendimento comercial rápido • Sem compromisso • Brasília/DF e todo o Brasil</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =================== FOOTER =================== -->
+  <footer class="bg-navy-900 border-t border-navy-border" aria-labelledby="footer-title">
+    <h2 id="footer-title" class="sr-only">Rodapé B2B Tech Software</h2>
+    <div class="max-w-site mx-auto px-5 sm:px-6 lg:px-8 py-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.2fr]">
+      <div class="sm:col-span-2 lg:col-span-1">
+        <a href="#inicio" class="inline-flex items-center gap-2.5" aria-label="B2B Tech Software — voltar ao início">
+          <span class="w-9 h-9 rounded-xl flex items-center justify-center bg-gradient-to-br from-brand-primary to-brand-glow">
+            <i data-lucide="code-xml" class="w-5 h-5 text-white"></i>
+          </span>
+          <span class="font-display font-extrabold text-lg tracking-tight text-white">B2B Tech <span class="text-brand-glow">Software</span></span>
+        </a>
+        <p class="mt-4 max-w-sm text-[15px]">Soluções profissionais em Desenvolvimento Web (Landing Pages de Alta Conversão) e Edição de Mídia Estratégica para empresas.</p>
+      </div>
+
+      <nav aria-label="Navegação rápida do rodapé">
+        <p class="font-mono text-xs font-bold tracking-widest text-white">NAVEGAÇÃO</p>
+        <ul class="mt-4 space-y-2.5 text-[15px]">
+          <li><a href="#solucoes" class="hover:text-brand-glow transition-colors">Soluções</a></li>
+          <li><a href="#nichos" class="hover:text-brand-glow transition-colors">Nichos Atendidos</a></li>
+          <li><a href="#como-funciona" class="hover:text-brand-glow transition-colors">Como Funciona</a></li>
+          <li><a href="#planos" class="hover:text-brand-glow transition-colors">Planos</a></li>
+          <li><a href="#faq" class="hover:text-brand-glow transition-colors">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <p class="font-mono text-xs font-bold tracking-widest text-white">CONTATO DIRETO</p>
+        <ul class="mt-4 space-y-3 text-[15px]">
+          <li>
+            <a href="https://wa.me/5561998245862?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20B2B%20Tech%20Software%20e%20gostaria%20de%20conversar%20com%20um%20especialista%20sobre%20as%20solu%C3%A7%C3%B5es%20para%20minha%20empresa."
+               target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-2 text-ink-secondary hover:text-brand-glow transition-colors">
+              <svg class="w-4 h-4 text-[#25D366]" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+              WhatsApp Comercial: (61) 99824-5862
+            </a>
+          </li>
+          <li class="flex items-start gap-2"><i data-lucide="clock" class="w-4 h-4 mt-1 text-brand-soft shrink-0"></i>Segunda a Sexta, Atendimento Comercial B2B</li>
+          <li class="flex items-center gap-2 text-ink-secondary"><span class="status-dot" aria-hidden="true"></span>Todos os servidores operacionais (24/7)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-navy-border">
+      <p class="max-w-site mx-auto px-5 sm:px-6 lg:px-8 py-6 text-sm text-center sm:text-left text-ink-muted/80">
+        © <span id="current-year">2026</span> B2B Tech Software. Todos os direitos reservados. Desenvolvido com tecnologia de alta performance.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Botão flutuante WhatsApp -->
+  <div class="wa-wrap fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-40 flex items-center gap-3">
+    <span class="wa-tooltip hidden sm:block rounded-lg bg-navy-800 border border-navy-border px-3 py-2 text-sm font-medium text-white shadow-xl" aria-hidden="true">Falar com Especialista</span>
+    <a href="https://wa.me/5561998245862?text=Ol%C3%A1!%20Estou%20no%20site%20da%20B2B%20Tech%20Software%20e%20gostaria%20de%20falar%20com%20um%20especialista%20agora."
+       target="_blank" rel="noopener noreferrer"
+       class="wa-float relative w-14 h-14 rounded-full flex items-center justify-center text-white"
+       aria-label="Falar com Especialista no WhatsApp (abre em nova aba)">
+      <svg class="relative w-7 h-7" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+    </a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
