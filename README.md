@@ -94,6 +94,12 @@ Não é necessário instalar dependências locais para abrir a página:
 
 O Tailwind CSS, os ícones Lucide e as fontes são carregados por CDN. Para que esses recursos apareçam corretamente, é necessária uma conexão com a internet.
 
+### Publicar no GitHub Pages
+
+O workflow [`.github/workflows/static.yml`](./.github/workflows/static.yml) publica somente `projetos/b2b-tech-software/`, onde está o `index.html` do site. Assim, os arquivos Markdown e demais conteúdos da raiz do repositório não substituem a página inicial.
+
+No GitHub, abra **Settings → Pages** e selecione **GitHub Actions** como fonte de publicação. Depois, envie as alterações para a branch `main`; o workflow fará o deploy automaticamente. Também é possível iniciá-lo manualmente pela aba **Actions**.
+
 ## Fluxo de criação
 
 O processo está organizado em três fases:
